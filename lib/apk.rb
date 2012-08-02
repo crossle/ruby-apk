@@ -9,8 +9,9 @@ class APK
     @aapt = AAPT.new(@apk)
   end
 
-  def name
-    @aapt.dump[:name]
+
+  def method_missing(method, *args, &block)
+    @aapt.dump[method]
   end
 
 end
