@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'apk'
+
+apk = APK.new ARGV[0]
+puts apk.name
