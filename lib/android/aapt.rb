@@ -1,4 +1,4 @@
-class APK
+module Android
   class AAPT
     @@aapt = File.dirname(__FILE__) + "/../binaries/aapt"
     attr_reader :apk
