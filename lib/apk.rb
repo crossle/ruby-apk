@@ -2,6 +2,7 @@ require 'android/aapt'
 require 'android/resource'
 
 class APK
+  include Android
 
   attr_reader :apk, :aapt, :resource
 
@@ -11,9 +12,9 @@ class APK
     @resource = Resource.new(@apk)
   end
 
-  def icon
+  def drawable(name = "icon.png")
     dst = "/tmp/ruby-apk-#{Time.now.to_i}"
-    @resource.extract('icon.png', dst)
+    @resource.extract(name, dst)
     dst
   end
 
