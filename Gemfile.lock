@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    apk (0.1.1)
+    apk (0.1.2)
       rubyzip
 
 GEM

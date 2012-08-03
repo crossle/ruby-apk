@@ -4,5 +4,8 @@ require 'apk'
 
 apk = APK.new ARGV[0]
 puts apk.name
+puts apk.version_name
+puts apk.version_code
+puts apk.label
 
 puts apk.drawable('ic_launcher.png')

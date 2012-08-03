@@ -4,7 +4,7 @@ require 'android/resource'
 class APK
   include Android
 
-  attr_reader :apk, :aapt, :resource
+  attr_reader :apk, :aapt, :resource, :dump
 
   def initialize(apk_path)
     @apk = apk_path
@@ -19,7 +19,7 @@ class APK
   end
 
   def method_missing(method, *args, &block)
-    @aapt.dump[method]
+    (@dump ||= @aapt.dump)[method]
   end
 
 end

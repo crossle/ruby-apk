@@ -14,11 +14,11 @@ module Android
     def dump
       attrs = {}
       info = aapt('dump badging')
-      package = info.match(/package:\s*(.*)/)[1]
-      attrs[:name] = package.match(/name='(\S*)'/)[1]
-      attrs[:version_code] = package.match(/versionCode='(\S*)'/)[1]
-      attrs[:version_name] = package.match(/versionName='(\S*)'/)[1]
-      attrs[:label] = info.match(/application-label:\s*'(\S*)'/)[1]
+      package = info.match(/package:\s*(.*)/)[1] rescue nil
+      attrs[:name] = package.match(/name='([^']*)'/)[1] rescue nil
+      attrs[:version_code] = package.match(/versionCode='([^']*)'/)[1] rescue nil
+      attrs[:version_name] = package.match(/versionName='([^']*)'/)[1] rescue nil
+      attrs[:label] = info.match(/application-label:\s*'([^']*)'/)[1] rescue nil
       attrs
     end
 
