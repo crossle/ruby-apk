@@ -10,16 +10,7 @@ module Android
     end
 
     def extract(res, dst)
-      Zip::ZipFile.open(@apk) do |zipfile|
-        %w[xxhdpi xhdpi hdpi mdpi ldpi].each do |s|
-          break unless zipfile.each do |file|
-            if "res/drawable-#{s}/#{res}" == file.name
-              zipfile.extract(file, dst)
-              break
-            end
-          end
-        end
-      end
+      Zip::ZipFile.open(@apk).extract(res, dst)
     end
 
   end

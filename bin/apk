@@ -7,5 +7,6 @@ puts apk.name
 puts apk.version_name
 puts apk.version_code
 puts apk.label
+puts apk.icon
 
-puts apk.drawable('ic_launcher.png')
+puts apk.drawable

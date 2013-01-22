@@ -12,9 +12,9 @@ class APK
     @resource = Resource.new(@apk)
   end
 
-  def drawable(name = "icon.png")
+  def drawable
     dst = "/tmp/ruby-apk-#{Time.now.to_i}"
-    @resource.extract(name, dst)
+    @resource.extract(self.icon, dst)
     dst
   end
 
