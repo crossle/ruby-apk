@@ -21,6 +21,7 @@ module Android
       attrs[:version_name] = package.match(/versionName='([^']*)'/)[1] rescue nil
       attrs[:label] = info.match(/application-label:\s*'([^']*)'/)[1] rescue nil
       attrs[:icon] = application.match(/icon='([^']*)'/)[1] rescue nil
+      attrs[:api_level] = info.match(/sdkVersion:\s*'(.*)'/)[1] rescue nil
       attrs
     end
 
